@@ -58,8 +58,8 @@ if __name__=="__main__":
 
   for i, name in enumerate(files, start=0):
 
-    test_img = X_test[i] # Está pegando imagens da pasta treinamento
-    ground_truth = y_test[i] # máscara
+    test_img = X_test[i]
+    ground_truth = y_test[i]
 
     test_img_input=np.expand_dims(test_img, 0)
     prediction = (my_model.predict(test_img_input)[0,:,:,0] > 0.5).astype(np.uint8)
