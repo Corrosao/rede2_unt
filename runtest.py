@@ -47,8 +47,6 @@ if __name__=="__main__":
   # SE  test_size = 0.2, SIGNIFICA QUE 20% DAS IMAGENS SERÃO PARA TESTE E NÃO PARA TREINAMENTO
 
   # X_train, X_test, y_train, y_test = train_test_split(image_dataset, mask_dataset, test_size = 0.2, random_state = 0)
-  # X_train, X_test, y_train, y_test = train_test_split(image_dataset, mask_dataset, test_size = 1.0, random_state = 0)
-
 
   pre_trained_unet_model = load_model('custom-unetweights-8000epochs_29_09.h5', compile=False)
   my_model = pre_trained_unet_model
@@ -58,7 +56,6 @@ if __name__=="__main__":
   X_test = image_dataset
   y_test = mask_dataset
 
-  # for i in tqdm(range(len(X_test))):
   for i, name in enumerate(files, start=0):
 
     test_img = X_test[i] # Está pegando imagens da pasta treinamento
